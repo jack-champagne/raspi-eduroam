@@ -20,7 +20,7 @@ below is the command for configuring this file appropriately. Please fill in you
 ### TODO: FIX the paste section, they do not have internet. 
 
 ```bash
-sudo tee -s $'ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+echo $'ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=l
 country=US
 network={
@@ -34,7 +34,7 @@ network={
     anonymous_identity="NETID@umass.edu"
     password="NETIDPASSWORD"
     phase2="auth=PAP"
-}' >> /etc/wpa_supplicant/wpa_supplicant.conf
+}' | sudo tee -s /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
 Next we will need to edit the wpa function file in order to fix a bug in the Raspbian OS.
