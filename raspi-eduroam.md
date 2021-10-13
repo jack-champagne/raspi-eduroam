@@ -34,7 +34,7 @@ network={
     anonymous_identity="NETID@umass.edu"
     password="NETIDPASSWORD"
     phase2="auth=PAP"
-}' | sudo tee -s /etc/wpa_supplicant/wpa_supplicant.conf
+}' | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
 Next we will need to edit the wpa function file in order to fix a bug in the Raspbian OS.
