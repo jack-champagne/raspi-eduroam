@@ -21,7 +21,7 @@ below is the command for configuring this file appropriately. Please fill in you
 
 ```bash
 echo $'ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=l
+update_config=1
 country=US
 network={
     ssid="eduroam"
