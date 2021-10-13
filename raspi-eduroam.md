@@ -20,7 +20,7 @@ below is the command for configuring this file appropriately. Please fill in you
 ### TODO: FIX the paste section, they do not have internet. 
 
 ```bash
-sudo echo $'ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+sudo tee -s $'ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=l
 country=US
 network={
