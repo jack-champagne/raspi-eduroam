@@ -4,8 +4,9 @@ Try reading this guide first on Github, if that does not suite you continue read
 
 * Try connecting to the UMASS network, open a browser and go to umass.edu
 If you see the photo below, the time settings on the raspberry pi need to be reconfigured.
+![Image of date not set correctly]
 
-Open the terminal on the menu bar and type the following command (replace YYYY with year, MM with month, and so on. HH must be in 24hr time):
+Open the terminal on the menu bar and type the following command (replace YYYY with year, MM with month, and so on. **HH must be in 24hr time**):
 
 ```bash
 sudo date -s 'YYYY-MM-DD HH:MM:SS'
@@ -15,12 +16,11 @@ If you see the updated date in the terminal below where you put in the command, 
 If you do not see this error, move on to the next step
 
 * To get the Raspberry Pi to connect to the eduroam network, a configuration file called the ‘wpa_supplicant’ must be configured correctly
-below is the command for configuring this file appropriately. Please fill in your NETID and password into marked fields.
+below is the command for configuring this file appropriately. **Please fill in your NETID and password** into marked fields.
 
-### TODO: FIX the paste section, they do not have internet. 
-
+Inside: `/etc/wpa_supplicant/wpa_supplicant.conf`
 ```bash
-echo $'ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 country=US
 network={
@@ -34,8 +34,12 @@ network={
     anonymous_identity="NETID@umass.edu"
     password="NETIDPASSWORD"
     phase2="auth=PAP"
-}' | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf
+}
 ```
+
+Or you can use this handy script that will try and do that for you:
+[SCRIPT]()
+
 
 Next we will need to edit the wpa function file in order to fix a bug in the Raspbian OS.
 
