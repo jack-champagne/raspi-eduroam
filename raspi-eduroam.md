@@ -48,7 +48,8 @@ network={
 }
 ```
 
-**Handy script**: that will try and do that for you. You can get this on your computer by doing
+####**Handy script**: 
+that will try and do that for you. You can get this on your computer by doing
 
 ```bash
 git clone https://github.com/jack-champagne/raspi-eduroam/raspi-eduroam.git
