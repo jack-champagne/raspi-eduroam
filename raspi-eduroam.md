@@ -52,7 +52,7 @@ network={
 You can get this on your computer by doing:
 
 ```bash
-git clone https://github.com/jack-champagne/raspi-eduroam/raspi-eduroam.git
+git clone https://github.com/jack-champagne/raspi-eduroam.git
 ```
 
 and then navigating into the folder called *raspi-eduroam*
