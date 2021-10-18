@@ -88,11 +88,12 @@ WPA_SUP_OPTIONS="$WPA_SUP_OPTIONS -D wext,nl80211"
 
 finally, on line 227 (:227) change this:
 ```bash
-WPA_SUP_OPTIONS = "$WPA_SUP_OPTIONS -D wext,nl80211"
+WPA_SUP_OPTIONS = "$WPA_SUP_OPTIONS -D nl80211,wext"
 ```
+
 to this (similarly as before):
 ```bash
-WPA_SUP_OPTIONS = "$WPA_SUP_OPTIONS -D nl80211,wext"
+WPA_SUP_OPTIONS = "$WPA_SUP_OPTIONS -D wext,nl80211"
 ```
 
 Great, now the wpa functions.sh script will load these libraries in the right order. Now a similar thing needs to be done in another file called */lib/dhcpcd/dhcpcd-hooks/10-wpa_supplicant*.
