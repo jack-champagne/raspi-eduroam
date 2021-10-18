@@ -1,7 +1,7 @@
 #!/bin/sh
 # TO RUN THIS SCRIPT:
 # chmod +x ./cfg-wpa.sh
-# ./cfg-wpa.sh
+# sudo ./cfg-wpa.sh
 echo "Enter netid username in format: NETIDUSERNAME@umass.edu"
 read B_USERNAME
 
