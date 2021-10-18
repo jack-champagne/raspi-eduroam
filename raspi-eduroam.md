@@ -124,3 +124,6 @@ Great, now we can try and reboot.
 ## Congrats!
 
 Barring typos and/or configuration differences between Pi's and versions of the Raspbian OS, the r-pi should now be connected to eduroam.
+```bash
+sudo reboot
+```
