@@ -7,6 +7,9 @@ Try connecting to the UMASS network by hitting the network icon here:
 
 Open a browser and go to umass.edu
 
+You should reach a page like the page below, go into the login and password fields and enter in your info:
+![Umass network login](images/umass-network-login.jpg)
+
 If you see the photo below, the time settings on the raspberry pi need to be reconfigured.
 ![Image of date not set correctly](images/time-not-configured.png)
 
