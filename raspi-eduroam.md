@@ -26,7 +26,7 @@ If you do not see this error, move on to the next step
 * To get the Raspberry Pi to connect to the eduroam network, a configuration file called the ‘wpa_supplicant’ must be configured correctly
 below is the command for configuring this file appropriately. **Please fill in your NETID and password** into marked fields.
 
-### If you don't feel comfortable doing this, try looking at the script below instead.
+### If you don't feel comfortable doing this, try looking at the [script below instead](https://github.com/jack-champagne/raspi-eduroam/blob/main/raspi-eduroam.md#handy-script).
 
 Inside: */etc/wpa_supplicant/wpa_supplicant.conf*
 
@@ -49,7 +49,7 @@ network={
 ```
 
 #### **Handy script**: 
-that will try and do that for you. You can get this on your computer by doing
+You can get this on your computer by doing:
 
 ```bash
 git clone https://github.com/jack-champagne/raspi-eduroam/raspi-eduroam.git
