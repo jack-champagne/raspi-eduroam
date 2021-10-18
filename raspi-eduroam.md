@@ -7,14 +7,10 @@ Try connecting to the UMASS network by hitting the network icon here:
 
 Open a browser and go to umass.edu
 
-<<<<<<< HEAD
 You should reach a page like the page below, go into the login and password fields and enter in your info:
 ![Umass network login](images/umass-network-login.jpg)
 
 If you see the photo below, the time settings on the raspberry pi need to be reconfigured.
-=======
-If when you login, you do not seem to connect, the time settings on the raspberry pi may need to be reconfigured. You can tell this if you open a new tab, try and visit a webpage, and it shows this:
->>>>>>> b0869430e512cb484e07a43ad616dc8eb5608096
 ![Image of date not set correctly](images/time-not-configured.png)
 
 Either click the update buttons on chrome for date and time or, if that's not available, open the terminal on the menu bar:
