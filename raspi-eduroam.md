@@ -21,6 +21,8 @@ sudo date -s 'YYYY-MM-DD HH:MM:SS'
 If you see the updated date in the terminal below where you put in the command, great you date is now configured, try reloading the webpage.
 If you do not see this error, move on to the next step
 
+## Next step, fix wpa supplicant
+
 * To get the Raspberry Pi to connect to the eduroam network, a configuration file called the ‘wpa_supplicant’ must be configured correctly
 below is the command for configuring this file appropriately. **Please fill in your NETID and password** into marked fields.
 
