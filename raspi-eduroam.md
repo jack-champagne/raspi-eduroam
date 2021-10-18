@@ -7,13 +7,17 @@ Try connecting to the UMASS network by hitting the network icon here:
 
 Open a browser and go to umass.edu
 
+<<<<<<< HEAD
 You should reach a page like the page below, go into the login and password fields and enter in your info:
 ![Umass network login](images/umass-network-login.jpg)
 
 If you see the photo below, the time settings on the raspberry pi need to be reconfigured.
+=======
+If when you login, you do not seem to connect, the time settings on the raspberry pi may need to be reconfigured. You can tell this if you open a new tab, try and visit a webpage, and it shows this:
+>>>>>>> b0869430e512cb484e07a43ad616dc8eb5608096
 ![Image of date not set correctly](images/time-not-configured.png)
 
-Open the terminal on the menu bar:
+Either click the update buttons on chrome for date and time or, if that's not available, open the terminal on the menu bar:
 ![Location of terminal on menu bar](images/terminal-menu-bar.jpg)
 and type the following command (replace YYYY with year, MM with month, and so on. **HH must be in 24hr time**):
 
@@ -24,8 +28,12 @@ sudo date -s 'YYYY-MM-DD HH:MM:SS'
 If you see the updated date in the terminal below where you put in the command, great you date is now configured, try reloading the webpage.
 If you do not see this error, move on to the next step
 
+## Next step, fix wpa supplicant
+
 * To get the Raspberry Pi to connect to the eduroam network, a configuration file called the ‘wpa_supplicant’ must be configured correctly
 below is the command for configuring this file appropriately. **Please fill in your NETID and password** into marked fields.
+
+### If you don't feel comfortable doing this, try looking at the [script below instead](https://github.com/jack-champagne/raspi-eduroam/blob/main/raspi-eduroam.md#handy-script).
 
 Inside: */etc/wpa_supplicant/wpa_supplicant.conf*
 
@@ -47,10 +55,11 @@ network={
 }
 ```
 
-Or you can use this handy script that will try and do that for you. You can get this on your computer by doing
+#### **Handy script**: 
+You can get this on your computer by doing:
 
 ```bash
-git clone https://github.com/jack-champagne/raspi-eduroam/raspi-eduroam.git
+git clone https://github.com/jack-champagne/raspi-eduroam.git
 ```
 
 and then navigating into the folder called *raspi-eduroam*
@@ -86,11 +95,12 @@ WPA_SUP_OPTIONS="$WPA_SUP_OPTIONS -D wext,nl80211"
 
 finally, on line 227 (:227) change this:
 ```bash
-WPA_SUP_OPTIONS = "$WPA_SUP_OPTIONS -D wext,nl80211"
+WPA_SUP_OPTIONS = "$WPA_SUP_OPTIONS -D nl80211,wext"
 ```
+
 to this (similarly as before):
 ```bash
-WPA_SUP_OPTIONS = "$WPA_SUP_OPTIONS -D nl80211,wext"
+WPA_SUP_OPTIONS = "$WPA_SUP_OPTIONS -D wext,nl80211"
 ```
 
 Great, now the wpa functions.sh script will load these libraries in the right order. Now a similar thing needs to be done in another file called */lib/dhcpcd/dhcpcd-hooks/10-wpa_supplicant*.
@@ -121,3 +131,6 @@ Great, now we can try and reboot.
 ## Congrats!
 
 Barring typos and/or configuration differences between Pi's and versions of the Raspbian OS, the r-pi should now be connected to eduroam.
+```bash
+sudo reboot
+```
