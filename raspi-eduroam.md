@@ -12,7 +12,7 @@ You should reach a page like the page below, go into the login and password fiel
 
 ![Umass network login](images/umass-network-login.jpg)
 
-If you see the photo below at all during this process, the time settings on the raspberry pi may need to be reconfigured.
+If you see the photo below at all during this process (check your other tabs), the time settings on the raspberry pi may need to be reconfigured.
 
 ![Image of date not set correctly](images/time-not-configured.png)
 
@@ -66,6 +66,7 @@ and then navigating into the folder called *raspi-eduroam*
 and then running the commands at the top of the file as you see them (which should be these)
 
 ```bash
+cd raspi-eduroam
 chmod +x cfg-wpa.sh
 sudo ./cfg-wpa.sh
 ```
