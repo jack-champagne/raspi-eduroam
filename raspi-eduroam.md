@@ -12,21 +12,21 @@ You should reach a page like the page below, go into the login and password fiel
 
 ![Umass network login](images/umass-network-login.jpg)
 
-If you see the photo below, the time settings on the raspberry pi need to be reconfigured.
+If you see the photo below at all during this process, the time settings on the raspberry pi may need to be reconfigured.
 
 ![Image of date not set correctly](images/time-not-configured.png)
 
-Either click the update buttons on chrome for date and time or, if that's not available, open the terminal on the menu bar:
+To do this either click the update buttons on chrome for date and time or, if that's not available, open the terminal on the menu bar shown below and type the following commands:
 
 ![Location of terminal on menu bar](images/terminal-menu-bar.jpg)
-and type the following command (replace YYYY with year, MM with month, and so on. **HH must be in 24hr time**):
+Here is the command: (replace YYYY with year, MM with month, and so on. **HH must be in 24hr time**):
 
 ```bash
 sudo date -s 'YYYY-MM-DD HH:MM:SS'
 ```
 
-If you see the updated date in the terminal below where you put in the command, great you date is now configured, try reloading the webpage.
-If you do not see this error, move on to the next step
+If you see the updated date in the terminal below where you put in the command, great your date is now configured, try reloading the webpage.
+If you do not see this error, move on to the next step.
 
 ## Next step, fix wpa supplicant
 
@@ -93,7 +93,7 @@ Now, change this line by swapping the last two library names to read:
 WPA_SUP_OPTIONS="$WPA_SUP_OPTIONS -D wext,nl80211"
 ```
 
-finally, on line 227 (:227) change this:
+finally, on line 227 change this:
 ```bash
 WPA_SUP_OPTIONS = "$WPA_SUP_OPTIONS -D nl80211,wext"
 ```
@@ -114,13 +114,13 @@ cd /lib/dhcpcd/dhcpcd-hooks/
 sudo vi 10-wpa_supplicant
 ```
 
-Around line 58-60ish there is a line containing the following before our changes:
+Around line 60ish there is a line containing the following: (before our changes)
 
 ```bash
 wpa_supplicant_driver="${wpa_supplicant_driver:-nl80211,wext}"
 ```
 
-We need to again swap the library order to read:
+We need to again swap the library order to read: (after our changes)
 
 ```bash
 wpa_supplicant_driver="${wpa_supplicant_driver:-wext,nl80211}"
