@@ -76,7 +76,7 @@ here is the source:
 
 ## Fixing Raspbian OS libraries and scripts
 
-Next we will need to edit the wpa function file in order to fix a bug in the Raspbian OS. Navigate to */etc/wpa_supplicant/* and open *functions.sh* in the text editor of your choice.
+Next we will need to edit the wpa function file in order to fix a bug in the Raspbian OS. Navigate to */etc/wpa_supplicant/* and open *functions.sh* in the text editor of your choice. For those familiar with the vi/vim text editor, here's a sample of opening it. It is important to note that whatever text editor you open it with must be done with admin permissions, hence sudo.
 
 ```bash
 cd /etc/wpa_supplicant/
